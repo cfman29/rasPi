@@ -1,0 +1,60 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body{  
+    margin: 0!important;
+    display: grid!important;
+    height: 100vh!important;
+    grid-template-rows: auto 1fr auto!important;
+    color: #41434D!important;
+}
+
+header {
+    padding: none!important;
+    background-color: #E1E6FA;
+    padding: 2rem;
+}
+
+.navbar-nav {
+    text-align: center;
+}
+
+.nav-link{
+    text-decoration: none!important;
+    color: #696c78;
+    float:right!important;
+}
+
+.nav-link:hover{
+    color:#8fa2f2;
+}
+
+main {
+    background-color: #f1f1f1;
+}
+
+footer {
+    background-color: #E1E6FA;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Team CSS */
+
+#wrapperRoster{display: flex;align-content: center;justify-content: center;width: 80%;margin: auto;}
+#rosterPanel{display: grid;grid-template-columns: repeat(6, 1fr);grid-template-rows: 50em;width: 100%;}
+.panel{border: #000 1px solid;height: 100%;width: 100%;}
+
+#MT{display: grid;grid-column: 1;grid-row: 1;}
+#MTimg{background-size: cover; background-position: center;}
+#OT{display: grid;grid-column: 2;grid-row: 1;}
+#OTimg{background-image: url("../roster/sigma.jpg");background-size: cover; background-position: center;}
+#HS{display: grid;grid-column: 3;grid-row: 1;}
+#HSimg{background-image: url("../roster/widow.jpg");background-size: cover; background-position: center;}
+#FDPS{display: grid;grid-column: 4;grid-row: 1;}
+#FDPSimg{background-image: url("../roster/echo.jpg");background-size: cover; background-position: center;}
+#MS{display: grid;grid-column: 5;grid-row: 1;}
+#MSimg{background-image: url("../roster/lucio.jpg");background-size: cover; background-position: center;}
+#FS{display: grid;grid-column: 6;grid-row: 1;}
+#FSimg{background-image: url("../roster/ana.jpg");background-size: cover; background-position: center;}
