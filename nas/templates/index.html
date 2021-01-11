@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% block head %}Team Speed Boost!{% endblock %}
 {% block main %}
-<h1>gf</h1>
+<h1>Folders:</h1>
+{% for fileName in fileNames %}
+    <h3> {{ fileName }} </h3>
+{% endfor %}
 {% endblock %}

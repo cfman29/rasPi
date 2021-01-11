@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Request password reset{% endblock %}
+{% block main %}
+<div class="user-form">
+    <h2>Please enter your email address in the box below.</h2>
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        {{ form.email.label() }}
+        {% if form.email.errors %}
+            {{ form.email(class="is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.email.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+                {{ form.email() }} <br />
+            {% endif %}
+        {{ form.submit() }}
+    </form>
+</div>
+{% endblock %}

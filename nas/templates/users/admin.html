@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}Login page{% endblock %}
+{% block main %}
+<div class="dashboard-body add-lan">
+    <h3>Add work languages</h3>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+
+        {{ form.language.label() }}
+        {% if form.language.errors %}
+            {{ form.language(class="is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.language.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+                {{ form.language() }} <br />
+        {% endif %}
+
+        {{ form.desc.label() }}
+        {% if form.desc.errors %}
+            {{ form.desc(class="is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.desc.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+                {{ form.desc() }} <br />
+        {% endif %}
+
+        {{ form.workbook.label() }}
+        {% if form.workbook.errors %}
+            {{ form.workbook(class="is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.workbook.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+                {{ form.workbook() }} <br />
+        {% endif %}
+
+        {{ form.video.label() }}
+        {% if form.video.errors %}
+            {{ form.video(class="is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.video.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+                {{ form.video() }} <br />
+        {% endif %}
+
+        {{ form.submit() }}<br />
+    </form>
+</div>
+{% endblock %}

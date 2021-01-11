@@ -32,6 +32,15 @@ header {
 
 main {
     background-color: #f1f1f1;
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 footer {

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block main %}
+<div class="dashboard-body">
+    <h1>{{ current_user.name }} - {{ current_user.email }}</h1>
+    <img class="dashboard-img" src="{{ image_file }}">
+    <form method="POST" action="" enctype="multipart/form-data">
+        <h2>Change information</h2>
+        {{ form.hidden_tag() }}
+
+        {{ form.name.label() }}
+        {% if form.name.errors %}
+            {{ form.name(class="is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.name.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+                {{ form.name() }} <br />
+        {% endif %}
+
+        {{ form.email.label() }}
+        {% if form.email.errors %}
+            {{ form.email(class="is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.email.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+                {{ form.email() }} <br />
+        {% endif %}
+        
+        {{ form.image.label() }} <br />
+        {{ form.image() }}
+        {% if form.image.errors %}
+            {% for error in form.image.errors %}
+                <span class="text-danger">{{ error }}</span>
+            {% endfor %}
+        {% endif %} <br>
+        {{ form.submit() }} <br>
+
+        {% if current_user.admin == True %}
+            <a href="{{ url_for('users.admin') }}">Admin area</a>
+        {% endif %}
+    </form>
+</div>
+{% endblock %}

@@ -15,10 +15,15 @@
         <nav class="navbar navbar-expand-lg">
             <ul class="navbar-nav mr-sm-2">
                 <li class="nav-item"><a class="nav-link" href="#">Index</a></li>
+                {% if current_user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('users.logout') }}">Logout</a></li>
+                {% else %}
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('users.login') }}">Login</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>
-    <main>{% block main %}{% endblock %}</main>
+    <main><div class="content">{% block main %}{% endblock %}</div></main>
     <footer>
     </footer>
 </body>

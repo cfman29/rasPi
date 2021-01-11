@@ -1,8 +1,6 @@
-from flask import current_app
-from datetime import datetime
-from nas import db, login_manager
 from flask_login import UserMixin
 from sqlalchemy.sql import func
+from nas import db, login_manager
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
